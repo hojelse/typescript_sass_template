@@ -1,1 +1,1 @@
-# Typescript an SASS with webpack
+# Typescript and SASS with webpack
