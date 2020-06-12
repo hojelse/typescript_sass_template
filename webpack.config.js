@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.ts', // entry file webpack will first looks at
+  entry: './src/index.ts',    // entry file webpack will first looks at
   module: {
     rules: [
       {
@@ -13,9 +13,14 @@ module.exports = {
       }
     ]
   },
+  resolve: { // support multifile .ts
+    extensions: ['.ts','.js']
+  },
+  devtool: 'eval-source-map',
   output: {
     publicPath: 'public',    // relative path
     filename: 'script.js',   // bundle file name
     path: path.resolve(__dirname, 'public'), // creates an absolute path
+    sourceMapFilename: "[name].js.map",
   }
 }
